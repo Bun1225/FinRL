@@ -280,7 +280,7 @@ try:
     ef_mean = EfficientFrontier(
         np.mean(arReturns, axis=0),
         np.cov(arReturns, rowvar=False),
-        weight_bounds=(0, 0.5),
+        weight_bounds=(0, 1),
     )
     raw_weights_mean = ef_mean.max_sharpe()
     cleaned_weights_mean = ef_mean.clean_weights()
@@ -492,7 +492,7 @@ def draw_sharpe(ax):
         df_acc = account_values_results[name]
         ret = df_acc["account_value"].pct_change().dropna()
         rolling_sharpe = (
-            ret.rolling(window=20).mean() / ret.rolling(window=20).std()
+            ret.rolling(window=20).mean() / ret.rolling(window=20).std() 
         ) * np.sqrt(250)
         rolling_sharpe = rolling_sharpe.dropna()
         

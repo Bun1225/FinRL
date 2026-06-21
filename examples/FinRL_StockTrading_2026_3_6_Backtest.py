@@ -66,7 +66,7 @@ TradeData = trade.pivot(index="date", columns="tic", values="close")
 arReturns = (np.diff(np.asarray(StockData), axis=0) / np.asarray(StockData)[:-1]) * 100
 
 try:
-    ef_mean = EfficientFrontier(np.mean(arReturns, axis=0), np.cov(arReturns, rowvar=False), weight_bounds=(0, 0.5))
+    ef_mean = EfficientFrontier(np.mean(arReturns, axis=0), np.cov(arReturns, rowvar=False), weight_bounds=(0, 1))
     raw_weights_mean = ef_mean.max_sharpe()
     cleaned_weights_mean = ef_mean.clean_weights()
     mvo_weights = np.array([1000000 * cleaned_weights_mean[i] for i in range(len(cleaned_weights_mean))])
