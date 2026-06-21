@@ -8,13 +8,13 @@ RESULTS_DIR = "results"
 
 # date format: '%Y-%m-%d'
 TRAIN_START_DATE = "2014-01-06"
-TRAIN_END_DATE = "2025-12-31"
+TRAIN_END_DATE = "2019-12-31"
 
-TEST_START_DATE = "2026-01-01"
-TEST_END_DATE = "2026-03-20"
+TEST_START_DATE = "2021-01-01"
+TEST_END_DATE = "2021-12-31"
 
-TRADE_START_DATE = "2026-01-01"
-TRADE_END_DATE = "2026-03-20"
+TRADE_START_DATE = "2021-01-01"
+TRADE_END_DATE = "2021-12-31"
 
 # stockstats technical indicator column names
 # check https://pypi.org/project/stockstats/ for different names
