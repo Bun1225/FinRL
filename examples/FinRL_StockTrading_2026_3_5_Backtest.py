@@ -160,11 +160,11 @@ trade.index.names = [""]
 if_using_a2c = if_using_ddpg = if_using_ppo = if_using_td3 = if_using_sac = True
 
 print(f"🤖 学習済みエージェントをロード中: {CUSTOM_TRAINED_MODEL_DIR}")
-trained_a2c = A2C.load(os.path.join(CUSTOM_TRAINED_MODEL_DIR, "agent_a2c")) if if_using_a2c else None
-trained_ddpg = DDPG.load(os.path.join(CUSTOM_TRAINED_MODEL_DIR, "agent_ddpg")) if if_using_ddpg else None
+# trained_a2c = A2C.load(os.path.join(CUSTOM_TRAINED_MODEL_DIR, "agent_a2c")) if if_using_a2c else None
+# trained_ddpg = DDPG.load(os.path.join(CUSTOM_TRAINED_MODEL_DIR, "agent_ddpg")) if if_using_ddpg else None
 trained_ppo = PPO.load(os.path.join(CUSTOM_TRAINED_MODEL_DIR, "agent_ppo")) if if_using_ppo else None
-trained_td3 = TD3.load(os.path.join(CUSTOM_TRAINED_MODEL_DIR, "agent_td3")) if if_using_td3 else None
-trained_sac = SAC.load(os.path.join(CUSTOM_TRAINED_MODEL_DIR, "agent_sac")) if if_using_sac else None
+# trained_td3 = TD3.load(os.path.join(CUSTOM_TRAINED_MODEL_DIR, "agent_td3")) if if_using_td3 else None
+# trained_sac = SAC.load(os.path.join(CUSTOM_TRAINED_MODEL_DIR, "agent_sac")) if if_using_sac else None
 
 # %% Part 3. Backtesting - DRL agents
 stock_dimension = len(trade.tic.unique())
@@ -187,11 +187,11 @@ e_trade_gym = StockTradingEnv(
 )
 
 agents_dict = {
-    "a2c": (trained_a2c, if_using_a2c),
-    "ddpg": (trained_ddpg, if_using_ddpg),
+    # "a2c": (trained_a2c, if_using_a2c),
+    # "ddpg": (trained_ddpg, if_using_ddpg),
     "ppo": (trained_ppo, if_using_ppo),
-    "td3": (trained_td3, if_using_td3),
-    "sac": (trained_sac, if_using_sac),
+    # "td3": (trained_td3, if_using_td3),
+    # "sac": (trained_sac, if_using_sac),
 }
 account_values_results = {}
 weights_results = {}
